@@ -27,4 +27,4 @@ export function makeRandom(array: Array<number>): number {
   return makeRandom(selected)
 }
 
-console.log(getRandom(20))
+console.log(getRandom(3))
