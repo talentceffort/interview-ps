@@ -27,18 +27,18 @@ describe('makeRandom 을 테스트합니다', () => {
     expect(makeRandom([5])).toBe(5)
   })
 
-  it('파라미터로 받은 배열 중 무작위 값 하나를 리턴합니다', () => {
-    expect(makeRandom([0, 1, 2, 3])).toBeGreaterThanOrEqual(0)
-    expect(makeRandom([0, 1, 2, 3])).toBeLessThanOrEqual(3)
+  it('리턴 값은 파라미터로 받은 배열 중 하나의 요소입니다.', () => {
+    expect([0, 1]).toContain(makeRandom([0, 1]))
 
-    expect(makeRandom([0, 1, 2, 3, 4, 5])).toBeGreaterThanOrEqual(0)
-    expect(makeRandom([0, 1, 2, 3, 4, 5])).toBeLessThanOrEqual(5)
+    expect([0, 1, 2]).toContain(makeRandom([0, 1, 2]))
 
-    expect(makeRandom([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toBeGreaterThanOrEqual(0)
-    expect(makeRandom([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toBeLessThanOrEqual(10)
+    expect([90, 91, 92]).toContain(makeRandom([90, 91, 92]))
 
-    expect(makeRandom([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])).toBeGreaterThanOrEqual(0)
-    expect(makeRandom([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])).toBeLessThanOrEqual(20)
+    expect([1000, 2000, 3000]).toContain(makeRandom([1000, 2000, 3000]))
+
+    expect([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).toContain(makeRandom([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+
+    expect([10000, 10001, 100002, 10003]).toContain(makeRandom([10000, 10001, 100002, 10003]))
   })
 })
 
